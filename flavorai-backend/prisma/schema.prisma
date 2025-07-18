@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(uuid())
+  email    String   @unique
+  password String
+  recipes  Recipe[]
+  ratings  Rating[]
+}
+
+model Recipe {
+  id           String   @id @default(uuid())
+  title        String
+  description  String
+  ingredients  String
+  instructions String
+  rating       Int?
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  ratings      Rating[]
+  createdAt    DateTime @default(now())
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  value     Int
+  recipeId  String
+  userId    String
+  recipe    Recipe   @relation(fields: [recipeId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, recipeId])
+}
