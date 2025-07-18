@@ -24,16 +24,16 @@ cd flavorai
 docker-compose up --build
 ```
 📦 Folder Structure:
--flavorai-frontend/ — Next.js app
--flavorai-backend/ — NestJS API
--docker-compose.yml — Dev environment
+- flavorai-frontend/ — Next.js app
+- flavorai-backend/ — NestJS API
+- docker-compose.yml — Dev environment
 
 ✅ Features
-🔐 JWT Authentication
-🧑 Add, edit, and view personal recipes
-🌍 Browse all public recipes
-⭐ Rate recipes
+- 🔐 JWT Authentication
+- 🧑 Add, edit, and view personal recipes
+- 🌍 Browse all public recipes
+- ⭐ Rate recipes
 
 🧪 Dev Tools
-Prisma Studio: npx prisma studio
-Environment: .env file inside each folder
+- Prisma Studio: npx prisma studio
+- Environment: .env file inside each folder
