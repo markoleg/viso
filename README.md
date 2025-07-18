@@ -15,7 +15,7 @@ Simple full-stack web app to create, browse and rate recipes. Built with:
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/flavorai.git
+git clone https://github.com/markoleg/viso.git
 cd flavorai
 ```
 2. **Start the project with Docker Compose:**
