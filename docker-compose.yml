@@ -23,32 +23,32 @@ services:
     depends_on:
       - db
 
-  # frontend:
-  #   build:
-  #     context: ./flavorai-frontend
-  #     dockerfile: Dockerfile.dev
-  #   ports:
-  #     - "3000:3000"
-  #   volumes:
-  #     - ./flavorai-frontend:/app
-  #     - /app/node_modules
-  #     - /app/.next
-  #   environment:
-  #     - CHOKIDAR_USEPOLLING=true
-  #     - WATCHPACK_POLLING=true
-  #     - NEXT_PUBLIC_API_URL=http://localhost:3001
-  #   depends_on:
-  #     - backend
-
   frontend:
     build:
       context: ./flavorai-frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
+    volumes:
+      - ./flavorai-frontend:/app
+      - /app/node_modules
+      - /app/.next
     environment:
-      - NEXT_PUBLIC_API_URL=http://backend:3001
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - NEXT_PUBLIC_API_URL=http://localhost:3001
     depends_on:
       - backend
+
+  # frontend:
+  #   build:
+  #     context: ./flavorai-frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NEXT_PUBLIC_API_URL=http://backend:3001
+  #   depends_on:
+  #     - backend
 volumes:
   db-data:

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import api from '@/app/lib/api';
 import { getToken } from '@/app/lib/auth';
+import Link from 'next/link';
 
 export default function MyRecipesPage() {
   const [recipes, setRecipes] = useState<any[]>([]);
@@ -24,6 +25,7 @@ export default function MyRecipesPage() {
           <li key={recipe.id} className="border p-4 rounded">
             <h2 className="font-semibold">{recipe.title}</h2>
             <p>{recipe.description}</p>
+            <Link className='text-blue-500 hover:underline block pt-2' href={`/recipes/${recipe.id}`}>View</Link>
           </li>
         ))}
       </ul>

@@ -60,7 +60,7 @@ export default function RecipesPage() {
                 onRate={(value: number) => handleRate(recipe.id, value)}
               />
             )}
-            <Link href={`/recipes/${recipe.id}`}>View Recipe</Link>
+            <Link className='text-blue-500 hover:underline block pt-2' href={`/recipes/${recipe.id}`}>View Recipe</Link>
           </li>
         ))}
       </ul>
