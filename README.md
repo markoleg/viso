@@ -16,7 +16,7 @@ Simple full-stack web app to create, browse and rate recipes. Built with:
 
 ```bash
 git clone https://github.com/markoleg/viso.git
-cd flavorai
+cd viso
 ```
 2. **Start the project with Docker Compose:**
 
@@ -26,7 +26,7 @@ docker-compose up --build
 📦 Folder Structure:
 - flavorai-frontend/ — Next.js app
 - flavorai-backend/ — NestJS API
-- docker-compose.yml — Dev environment
+- docker-compose.yml
 
 ✅ Features
 - 🔐 JWT Authentication
